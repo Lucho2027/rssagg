@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
+	"github.com/lucho2027/rssagg/internal/auth"
 	"github.com/lucho2027/rssagg/internal/database"
 )
 
@@ -38,5 +39,5 @@ func (apiCfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Reques
 }
 
 func (apiCfg *apiConfig) handlerGetUser(w http.ResponseWriter, r *http.Request) {
-
+	apiKey, err := auth.GetAPIKey(r.Header)
 }
